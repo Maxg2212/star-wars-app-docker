@@ -27,4 +27,6 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: docker build . -t juanprrr/star-wars-server:latest
+    - run: docker login -u juanprrr -p ${{ secrets.DOCKER_HUB_PASS }}
+    - run: docker push juanprrr/star-wars-server:latest
 
