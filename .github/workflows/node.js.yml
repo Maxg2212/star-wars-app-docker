@@ -26,7 +26,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm run build --if-present
-    - run: docker build . -t juanprrr/star-wars-server:latest
+    - run: docker build . -t juanprrr/star-wars-web-server:latest
     - run: docker login -u juanprrr -p ${{ secrets.DOCKER_HUB_PASS }}
-    - run: docker push juanprrr/star-wars-server:latest
+    - run: docker push juanprrr/star-wars-web-server:latest
 
